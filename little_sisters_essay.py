@@ -9,3 +9,21 @@ def capitalize_title(title):
     frase = title
     letras_maiusculas = frase.title()
     return letras_maiusculas
+
+def check_sentence_ending(sentence):
+    """Check the ending of the sentence to verify that a period is present.
+
+    :param sentence: str - a sentence to check.
+    :return: bool - return True if punctuated correctly with period, False otherwise.
+    """
+    pontuacao = sentence
+    return pontuacao.endswith(".")
+
+def clean_up_spacing(sentence):
+    """Verify that there isn't any whitespace at the start and end of the sentence.
+
+    :param sentence: str - a sentence to clean of leading and trailing space characters.
+    :return: str - a sentence that has been cleaned of leading and trailing space characters.
+    """
+    tirando_espacos = sentence
+    return tirando_espacos.strip()
