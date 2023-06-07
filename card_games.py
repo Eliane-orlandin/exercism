@@ -10,8 +10,7 @@ def get_rounds(number):
     :param number: int - current round number.
     :return: list - current round and the two that follow.
     """
-    round_number = number
-    return [round_number, round_number + 1, round_number + 2]
+    return [number, number + 1, number + 2]
 
 def concatenate_rounds(rounds_1, rounds_2):
     """Concatenate two lists of round numbers.
@@ -33,3 +32,31 @@ def list_contains_round(rounds, number):
         return True
     else: 
         return False
+    
+def card_average(hand):
+    """Calculate and returns the average card value from the list.
+
+    :param hand: list - cards in hand.
+    :return: float - average value of the cards in the hand.
+    """
+    #cartas = hand
+    #quantidade_de_cartas = len(hand)
+    #soma_das_cartas = sum(cartas)
+    #return soma_das_cartas / quantidade_de_cartas
+    return sum(hand) / len(hand)
+
+def approx_average_is_average(hand):
+    """Return if an average is using (first + last index values ) OR ('middle' card) == calculated average.
+    :param hand: list - cards in hand.
+    :return: bool - does one of the approximate averages equal the `true average`?
+    """
+    media = (hand[0] + hand[-1])/2
+    carta_do_meio = hand[len(hand) // 2]
+    card_average = sum(hand) / len(hand)
+    
+
+    if media == card_average or carta_do_meio == card_average:
+        return True
+    else:
+        return False
+    
