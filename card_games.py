@@ -60,3 +60,25 @@ def approx_average_is_average(hand):
     else:
         return False
     
+def average_even_is_average_odd(hand):
+    """Return if the (average of even indexed card values) == (average of odd indexed card values).
+    :param hand: list - cards in hand.
+    :return: bool - are even and odd averages equal?
+    """
+    lista_par = []
+    lista_impar = []
+    
+    for index, valor in enumerate(hand):
+        if index % 2 == 0:
+            lista_par.append(valor)
+        else:
+            lista_impar.append(valor)
+
+    media_par = sum(lista_par) / len(lista_par)
+    media_impar = sum(lista_impar) / len(lista_impar)
+    
+    if media_par == media_impar:
+        return True
+    else:
+        return False
+    
