@@ -34,3 +34,11 @@ def add_me_with_my_friends(queue, index, person_name):
     queue.insert(index, person_name)
     return queue
 
+def sorted_names(queue):
+    """Sort the names in the queue in alphabetical order and return the result.
+
+    :param queue: list - names in the queue.
+    :return: list - copy of the queue in alphabetical order.
+    """
+    ordem_lista = sorted(queue)
+    return ordem_lista
