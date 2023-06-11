@@ -35,3 +35,4 @@ def above_threshold(student_scores, threshold):
         if nota >= threshold:
             lista_aprovados.append(nota)
     return lista_aprovados
+
