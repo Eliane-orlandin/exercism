@@ -36,3 +36,35 @@ def above_threshold(student_scores, threshold):
             lista_aprovados.append(nota)
     return lista_aprovados
 
+def letter_grades(highest):
+    """Create a list of grade thresholds based on the provided highest grade.
+    :param highest: int - value of highest exam score.
+    :return: list - of lower threshold scores for each D-A letter grade interval.
+            For example, where the highest score is 100, and failing is <= 40,
+            The result would be [41, 56, 71, 86]:
+
+            41 <= "D" <= 55
+            56 <= "C" <= 70
+            71 <= "B" <= 85
+            86 <= "A" <= 100
+    """
+    diferenca = highest - 40
+    limite = round(diferenca / 4)
+
+    lista = list()
+
+    for index, item in enumerate(range(4)):
+        lista.append(41 + (limite * index))
+    return lista
+
+def student_ranking(student_scores, student_names):
+    """Organize the student's rank, name, and grade information in ascending order.
+    :param student_scores: list - of scores in descending order.
+    :param student_names: list - of string names by exam score in descending order.
+    :return: list - of strings in format ["<rank>. <student name>: <score>"].
+    """
+    lista = []
+    for index, (score, nome) in enumerate(zip(student_scores, student_names), start=1):
+        classificacao = (f"{index}. {nome}: {score}")
+        lista.append(classificacao)
+    return lista
